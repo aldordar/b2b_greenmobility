@@ -1,0 +1,112 @@
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(black, .7);
+    z-index: 9999;
+    //To hide it
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+
+    //Popup Content
+    &__content {
+        height: 23rem;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @media (min-width 769px) {
+          left: 60%;
+        }
+        background-color: $white;
+        border-radius: 3px;
+        display: table;
+        overflow: hidden;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.55);
+        margin-top: 15rem;
+        //Delay to make the black background come first
+        transition: all .3s .2s;
+        
+        &--box {
+          width: 45rem;
+          height: 100%;
+          position: relative;
+          background-color: $white;
+          padding: 5rem 4rem 2rem 4rem;
+          display: block;
+          color: $font_primary_color;
+          font-family: Open Sans Bold;
+          font-size: 2rem;
+          span {
+            display: block;
+            font-family: Open Sans;
+            line-height: 2.5;
+          }
+          hr {
+            position: absolute;
+            width: 83%;
+            bottom: 5.7rem;
+            left: 0;
+            transform: translate(10%, 0%);
+            background: #F5F5FB 0% 0% no-repeat padding-box;
+            border: 1px solid #606060;
+            opacity: 0.11;
+          }
+          button {
+            margin-top: 6rem;
+            font-size: 1.6rem;
+            font-family: Open Sans;
+            border: 0;
+            outline: none;
+            background-color: $white;
+            transition: all .2s;
+          }
+          &-cancel {
+            color: $font_primary_color;
+          }
+          &-delete {
+            color: $cancel_red;
+          }
+        }
+    }
+    
+    &:target {
+        //Make it visible
+        opacity: 1;
+        visibility: visible;
+    }
+    &:target + .brugere__user-form {
+      display: none !important;
+    }
+    //Make content visible and animated
+    &:target &__content {
+        margin-top: 0;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+}
+.content-show {
+  margin-top: 0;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}

@@ -1,0 +1,382 @@
+.brugere, .history {
+  grid-area: content / content / s-content / s-content;
+  overflow: auto;
+  @media (max-width 768px) {
+    grid-area: content;
+    margin: 0 3rem;
+  }
+  &__user-form {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -4rem;
+    right: 31rem;
+    @media (max-width 768px) {
+      right: 28.5rem;
+    }
+    input {
+      width: 0;
+      height: 0;
+      visibility: hidden;
+      position: absolute;
+    }
+  }
+
+  &__user-options {
+    position: absolute;
+    z-index: 99;
+    width: max-content;
+    &--box {
+      box-shadow: 0px 3px 18px 3px #00000029;
+      padding: .7rem 0;
+      background-color: $white;
+    }
+    &--box span {
+      display: block;
+      color: $font_primary_color;
+      padding: 1rem 7rem 1rem 2rem;
+      transition: all .3s;
+      &:hover {
+        cursor: pointer;
+        background-color: $background;
+      }
+    }
+    &--box button {
+      background-color: $white;
+      width: 100%;
+      border: 0;
+      outline: none;
+    }
+    &--box a {
+        &:link,
+        &:visited {
+          text-decoration: none;
+        }
+    }
+    &--arrow {
+      align-self: center;
+      width: 0;
+      height: 0;
+      border-top: 1rem solid transparent;
+      border-left: 1.2rem solid $white;
+      border-bottom: 1rem solid transparent;
+    }
+  }
+  &__table {
+    background-color: $white;
+    padding-left: 1rem;
+    width: 100%;
+    min-width: 82.8rem;
+    font-size: 1.7rem;
+    @media (max-width 768px) {
+      font-size: 1.5rem;
+    }
+  .table {
+    &-magnifier {
+      width: 1.6rem;
+      height: auto;
+      margin-right: 1rem;
+      background-image: url('../img/lupa.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &-search {
+      width: 12rem;
+      border: 0;
+      outline: none;
+      position: relative;
+      height: 2rem;
+      &::-webkit-input-placeholder {
+        font-weight: 600;
+        color: $font_primary_color;
+      }
+      &::-webkit-search-cancel-button {
+          -webkit-appearance: none;
+          position: absolute;
+          right: 2rem;
+          height: 1rem;
+          width: 1rem;
+          background-image: url('../img/close.svg');
+      }
+    }
+    &-border-search {
+      position: absolute;
+      bottom: -1rem;
+      width: 90%;
+      height 2px;
+      background-color: $filter_up_color;
+    }
+
+    &__icons {
+      position: relative;
+      justify-content: space-between;
+      &--filter {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        &-separator{
+          width: 1.1rem;
+          height: 0.4rem;
+        }
+        &-up {
+          width: 0;
+          height: 0;
+          border-left: .55rem solid transparent;
+          border-right: .55rem solid transparent;
+          border-bottom: .7rem solid $filter_up_color;
+        }
+        &-down {
+          width: 0;
+          height: 0;
+          border-left: .55rem solid transparent;
+          border-right: .55rem solid transparent;
+          border-top: .7rem solid $filter_up_color;
+        }
+      }
+    }
+
+    &__price {
+      color: $font_primary_color;
+    }
+
+    &-option{
+      position: relative;
+      justify-content: space-between;
+    }
+  }
+
+
+    tr {
+      transition: all .2s;
+      border-bottom: 1px solid $background;
+    }    
+    th, td{
+      padding: 1.9rem 3rem;
+      white-space: nowrap;
+      border-collapse: collapse;
+      @media (max-width 768px) {
+        padding: 1.9rem 2.5rem;
+      }
+    }
+    th {
+      color: $font_primary_color;
+    }
+    td {
+      color: $font_secondary_color;
+    }
+  }
+  .dot_option {
+    cursor: pointer;
+    fill: $dot_option;
+    &:hover {
+      fill: $font_primary_color;
+    }
+  }
+}
+
+.pagination {
+  color: $font_primary_color;
+  background-color: $white;
+  grid-area: pagination;
+  font-size: 1.6rem;
+  font-family: Open Sans Bold;
+  .page {
+    padding: 0 .4rem;
+    cursor: pointer;
+  }
+  .page-move {
+    border: 0;
+    outline: none;
+    color: $font_primary_color;
+    background-color: $white;
+    cursor: pointer;
+    padding: 0 2.5rem;
+  }
+  .current-page {
+    color: $main_green;
+  }
+  @media (max-width 768px) {
+    margin: 0 3rem 1rem 3rem;
+  }
+}
+
+.fakturaer, .profile {
+  grid-area: content / content / pagination / pagination;
+  overflow: auto;
+  @media (max-width 768px) {
+    overflow: unset;
+  }
+  
+  .row {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .single-fakturaer {
+    padding: 0 3rem 0 0;
+    @media (max-width 768px) {
+      padding: 0 2rem;
+      margin-bottom: 4rem;
+      &:last-child {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+  .single-profile-table {
+    padding: 0;
+    @media (max-width 768px) {
+      padding: 0 3rem;
+      width: 100vw;
+    }
+    &:last-child {
+      padding-left: 3rem;
+      @media (max-width 768px) {
+        padding-left: 0;
+      }
+      @media (max-width 734px) {
+        margin-top: 4rem;
+        padding-left: 3rem;
+      }
+    }
+  }
+
+  .fak-filter, .p-boder-filter {
+    margin-right: 2rem;
+  }
+
+  .table-container-scroller {
+    background-color: $white;
+    padding: 0 2.5rem;
+    max-height: 70vh;
+    overflow: auto;
+    @media screen and (max-height: 768px) and (min-width: 1024px){
+      max-height: 65vh;
+    }
+    @media (max-width 768px) {
+      max-height: 40vh;
+      padding: 0;
+      margin: 0 auto;
+      width: 80%;
+    }
+    @media (max-width 576px) {
+      width: max-content;
+    }
+  }
+  .table-container-scroller-profile {
+    background-color: $white;
+    padding: 0 2.5rem;
+    height: 55.2vh;
+    max-height: 58vh;
+    overflow: auto;
+    @media screen and (max-height: 768px) and (min-width: 1024px){
+      height: 56vh;
+      max-height: 56vh;
+    }
+    @media (max-width 768px) {
+      // max-height: 40vh;
+      padding: 0;
+      // margin: 0 auto;
+      // width: 90%;
+    }
+    @media (max-width 576px) {
+      // width: 85%;
+    }
+  }
+  
+  &__title {
+    margin-bottom: 2rem;
+    white-space: nowrap;
+    font-family: Open Sans Bold;
+    font-size: 2.1rem;
+    color: $font_primary_color;
+  }
+  &__table {
+    background-color: $white;
+    width: 100%;
+    font-size: 1.7rem;
+    @media (max-width 768px) {
+      font-size: 1.5rem;
+    }
+    .table {
+      &__icons {
+        justify-content: space-between;
+        &--filter {
+          cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          &-separator{
+            width: 1.1rem;
+            height: 0.4rem;
+          }
+          &-up {
+            width: 0;
+            height: 0;
+            border-left: .55rem solid transparent;
+            border-right: .55rem solid transparent;
+            border-bottom: .7rem solid $filter_up_color;
+          }
+          &-down {
+            width: 0;
+            height: 0;
+            border-left: .55rem solid transparent;
+            border-right: .55rem solid transparent;
+            border-top: .7rem solid $filter_up_color;
+          }
+        }
+      }
+    }
+
+    .download-file {
+      cursor: pointer;
+      fill: $dot_option;
+      height: 3.2rem;
+      &:hover {
+        fill: $main_green;
+      }  
+    }
+
+    .bin {
+      cursor: pointer;
+      margin-left: 1rem;
+      fill: $dot_option;
+      height: 2.4rem;
+      &:hover {
+        fill: $cancel_red;
+      }  
+    }
+
+    tr {
+      transition: all .2s;
+      border-bottom: 1px solid $background;
+    }    
+    th, td{
+      padding: 1.9rem 1rem;
+      white-space: nowrap;
+      border-collapse: collapse;
+      @media (max-width 768px) {
+        padding: 1.9rem 2rem;
+      }
+    }
+    th {
+      color: $font_primary_color;
+    }
+    td {
+      color: $font_secondary_color;
+    } 
+    tbody td:last-child {
+      text-align: center;
+    }
+  }
+}
+
+.profile {
+  thead th:last-child {
+    white-space: initial;
+    text-align: center;
+  }
+  &__title {
+    @media screen and (max-height: 768px) and (min-width: 1024px){
+      margin-bottom: 1.7rem;
+    }
+  }
+}

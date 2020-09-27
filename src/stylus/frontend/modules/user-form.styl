@@ -1,0 +1,207 @@
+.create-user, .edit-user, .update-user {
+  grid-area: content / content / pagination / pagination;
+  width: 60%;
+  @media (max-width 1048px) {
+    width: 70%;
+  }
+  @media (max-width 768px) {
+    width: 80%;
+    margin 0 auto;
+    padding-bottom: 6rem;
+  }
+  @media (max-width 576px) {
+    width: 85%;
+  }
+  @media screen and (max-height: 768px) and (min-width: 1024px){
+    width: 57%;
+    margin-top: -.5rem;
+  }
+
+  &__legend {
+    font-family: Open Sans Bold;
+    font-size: 2.1rem;
+    color: $font_primary_color;
+    margin-bottom: 2rem;
+    @media screen and (max-height: 768px) and (min-width: 1024px){
+      font-size: 1.8rem;
+      margin-bottom: 1.7rem;
+    }
+  }
+  &__form {
+    padding: 1rem 3rem 3rem 3rem;
+    background-color: $white;
+    @media screen and (max-height: 768px) and (min-width: 1024px){
+      padding: .7rem 2.7rem 1rem 2.7rem;
+    }
+  }
+  &__label {
+    padding: 2rem 0 .5rem 0;
+    font-size: 1.6rem;
+    font-family: Open Sans Bold;
+    color: $font_primary_color;
+    @media screen and (max-height: 768px) and (min-width: 1024px){
+      font-size: 1.4rem;
+      padding: 1.7rem 0 .2rem 0;
+    }  
+  }
+  .form-group {
+    position: relative;
+    &:not(:last-child){
+      margin-bottom: 2rem;
+      @media screen and (max-height: 768px) and (min-width: 1024px){
+        margin-bottom: 1.7rem;
+      }
+    }  
+  }
+  .form-control {
+    padding: 2.4rem 0;
+    height: 3rem;
+    border: 0;
+    font-size: 2.3rem;
+    color: $font_primary_color;
+    outline: none;
+    border-bottom: 2px solid $low_grey;
+    @media (max-width 768px) {
+      font-size: 2rem;
+    }
+    @media screen and (max-height: 768px) and (min-width: 1024px){
+      padding: 1.9rem 0;
+      font-size: 1.8rem;
+      height: 2rem;
+    }
+    &::-webkit-input-placeholder {
+      font-size: 2.3rem;
+      color: $low_grey;
+      @media (max-width 768px) {
+        font-size: 2rem;
+      }
+      @media screen and (max-height: 768px) and (min-width: 1024px){
+        font-size: 1.8rem;
+      }
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  .submit-button {
+    justify-content: flex-end;
+    @media (max-width 768px) {
+      justify-content: center;
+    }
+  }
+
+  &__submit, .administrator__submit {
+    border: 0;
+    outline: none;
+    color: $white;
+    padding: 0 .5rem;
+    margin-top: 2.3rem;
+    font-family: Open Sans Bold;
+    background-color: $main_green;
+    width: 19rem;
+    height: 5.5rem;
+    transition: all .2s;
+    @media screen and (max-height: 768px) and (min-width: 1024px){
+      height: 5.2rem;
+      margin-top: 2.1rem;
+    }
+    &:active {
+      margin-top: 2.4rem;
+      border: 0;
+      background-color: $hover_green;
+      outline: none !important;
+      box-shadow: none;
+      @media screen and (max-height: 768px) and (min-width: 1024px){
+        margin-top: 2.2rem;
+      }
+    }
+    &:focus {
+      outline: none !important;
+      border: 0;
+      box-shadow: none;
+    }
+    &:hover {
+      background-color: $dark_hover_green;
+    }
+  }
+
+  //Remove arrows increase-decrease on input type number
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0; 
+  } 
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  .error {
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    transform: translate(44%, 0%);
+    font-size: 1.35rem;
+    @media screen and (max-height: 768px) and (min-width: 1024px){
+      top: .5rem;
+    }
+    &-text {
+      background-color: $cancel_red;
+      padding: .7rem 1.3rem;
+      margin: 0;
+    }
+    &-down {
+      border-left: .6rem solid transparent;
+      border-right: .6rem solid transparent;
+      border-top: .8rem solid $cancel_red;
+    }
+    &-warning {
+      height: 1.8rem;
+      margin-top: 0.8rem;
+    }
+  }
+  .novalid {
+    border-bottom: 2px solid $cancel_red !important; 
+  }
+  .valid {
+    border-bottom: 2px solid $main_green !important;
+  }
+
+}
+
+.update-user {
+  width: auto;
+  .profile-form {
+    height 55.2vh;
+    max-height: 58vh;
+    @media screen and (max-height: 768px) and (min-width: 1024px){
+      height: 56vh;
+      max-height: 56vh;
+    }
+    @media (max-width 768px) {
+      height: auto;
+      max-height: none !important;
+    }
+  }
+  &__label {
+    padding: 1.5rem 0 .5rem 0;
+    font-size: 1.55rem;
+    @media screen and (max-height: 768px) and (min-width: 1024px){
+      padding: 1rem 0 .2rem 0;
+      font-size: 1.45rem;
+    }
+  }
+
+  .form-control {
+    font-size: 1.7rem;
+    padding: 1.7rem 0;
+    height: 2rem;
+    border-bottom: 2px solid $main_green;
+    @media screen and (max-height: 768px) and (min-width: 1024px){
+      padding: 1.6rem 0;
+      font-size: 1.6rem;
+      height: 1.9rem;
+    }
+  }
+}

@@ -1,0 +1,200 @@
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../img/login-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  .elements {
+    width: 100%;
+    position: absolute;
+    top: 22%;
+    justify-content center;
+    @media (max-width 1500px) {
+      top: 21%;
+    }
+    @media (max-height 768px) {
+      top: 18%;
+    }
+    @media (max-width 991px) {
+      flex-direction: column;
+      top: 4rem;
+    }
+    &__title {
+      width: 40%;
+      @media (max-width 1500px) {
+        width: 45%;
+      }
+      @media (max-width 1256px) {
+        width: 46%;
+      }
+      @media (max-width 991px) {
+        width: 100%;
+        margin-bottom: 5rem;
+      }
+      &--logo {
+        width: 25.8rem;
+        height: 10rem;
+        background-image: url('../img/gm_logo.svg');
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        @media (max-width 991px) {
+          width: 20rem;
+          margin: 0 20%;
+        }
+        @media (max-width 768px) {
+          width: 15rem;
+          margin: 0 15%;
+        }
+      }
+      &--title {
+        font-family: Open Sans Light;
+        font-size: 8rem;
+        @media (max-width 1256px) {
+          font-size: 7rem;
+        }
+        @media (max-width 1024px) {
+          font-size: 6rem;
+          margin-top: 2rem;
+        }
+        @media (max-width 991px) {
+          font-family: Open Sans;
+          margin: 0 20%;
+          font-size: 4rem;
+        }
+        @media (max-width 768px) {
+          font-size: 3rem;
+          margin: 0 15%;
+        }
+      }
+      &--title span {
+        color: $main_green;
+      }
+    }
+    &__form {
+      width: 35%;
+      @media (max-width 1500px) {
+        width: 42%;
+        margin-right: -4%;
+      }
+      @media (max-width 1256px) {
+        width: 43%;
+        margin-right: -5%;
+      }
+      @media (max-width 991px) {
+        width: 100%;
+      }
+      .login-form {
+        background-color: $white;
+        width: 70%;
+        height: 52rem;
+        padding: 8rem 5rem;
+        margin: 0 auto;
+        @media (max-width 1256px) {
+          padding: 5rem 4rem;
+          height: 45rem;
+        }
+        @media (max-width 991px) {
+          width: 60%;
+        }
+        @media (max-width 768px) {
+          width: 75%;
+        }
+        legend {
+          font-family: Open Sans Bold;
+          font-size: 2.3rem;
+          color: $font_primary_color;
+          margin-bottom: 4rem;
+        }
+        .form-group {
+          position: relative;
+          &:not(:last-child) {
+            margin-bottom: 3rem;
+          }
+          .form-control {
+            padding: 2rem 0;
+            height: 3rem;
+            border: 0;
+            font-size: 2.1rem;
+            color: $font_primary_color;
+            outline: none;
+            border-bottom: 2px solid $low_grey;
+            &:focus {
+              box-shadow: none;
+            }
+          }
+          .login-label {
+            font-family: Open Sans Bold;
+            font-size: 1.6rem;
+            color: $font_primary_color;
+          }      
+        }
+
+        .login-submit {
+          border: 0;
+          outline: none;
+          width: 100%;
+          color: $white;
+          font-family: Open Sans Bold;
+          background-color: $main_green;
+          height: 5rem;
+          transition: all .2s;
+          &:active {
+            background-color: $hover_green;
+            margin-top: .1rem;
+            margin-bottom: -.1rem;
+            border: 0;
+            outline: none !important;
+            box-shadow: none;
+          }
+          &:focus {
+            outline: none !important;
+            border: 0;
+            box-shadow: none;
+          }
+          &:hover {
+            background-color: $dark_hover_green;
+          }
+        }
+
+        .forgot-pw {
+          display: block;
+          margin-top: 1.5rem;
+          color: $font_secondary_color;
+        }
+      }
+    }
+
+  }
+
+  .error {
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    transform: translate(44%, 0%);
+    font-size: 1.35rem;
+    &-text {
+      background-color: $cancel_red;
+      padding: .7rem 1.3rem;
+      margin: 0;
+    }
+    &-down {
+      border-left: .6rem solid transparent;
+      border-right: .6rem solid transparent;
+      border-top: .8rem solid $cancel_red;
+    }
+    &-warning {
+      height: 1.8rem;
+      margin-top: 0.8rem;
+    }
+  }
+  .novalid {
+    border-bottom: 2px solid $cancel_red !important; 
+  }
+  .valid {
+    border-bottom: 2px solid $main_green !important;
+  }
+
+}

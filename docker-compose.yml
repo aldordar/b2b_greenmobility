@@ -1,0 +1,18 @@
+version: '2'
+services:
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    links:
+      - 'elastic:elastic'
+    volumes:
+      - ./dist:/var/www/html/web/
+  elastic:
+    build:
+      context: ./elasticsearch
+      dockerfile: Dockerfile
+    volumes:
+      - './elasticsearch/data/:/usr/share/elasticsearch/data'

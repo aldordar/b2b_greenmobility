@@ -1,0 +1,83 @@
+.header {
+  position: relative;
+  @media (max-width 768px) {
+    padding: 2rem 3rem;
+  }
+  @media (max-width 576px) {
+    padding: 2rem;
+  }    
+  .header__title {
+    padding: 1rem 0 0 0;
+    width: 74%;
+    font-family: Open Sans Bold;
+    color: $font_primary_color;
+    @media (min-width 1450px) {
+      width: 80%;
+      font-size: 3.3rem;
+    }
+    @media (max-width 768px) {
+      font-size: 2.7rem;
+      width: 70%;
+    }   
+    &--sub {
+    margin-top: 1.2rem;
+    font-family: Open Sans;
+    font-size: 2rem;
+    color: $font_secondary_color;
+      @media (max-width 768px) {
+        font-size: 1.7rem;
+      }  
+      @media (max-width 576px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .header__button {
+    text-decoration: none;
+    text-align: center;
+    color: $white;
+    padding: 0 .5rem;
+    margin-top: .8rem;
+    font-family: Open Sans Bold;
+    background-color: $main_green;
+    width: 26%;
+    height: 6rem;
+    box-shadow: 0px 3px 5px #0000001A;
+    transition: all .2s;
+    &:hover {
+      color: $white;
+      background-color: $dark_hover_green;
+    }
+    @media (min-width 1450px) {
+      width: 20%;
+      font-size: 1.6rem;
+    }
+    @media (max-width 768px) {
+      width: 30%;
+      height: 5.2rem;
+    }
+    &:active {
+      background-color: $hover_green;
+      margin-top: .85rem;
+      box-shadow: none;
+    }
+  }
+  .header__separator{
+    position: absolute;
+    bottom: 3rem;
+    width: 100%;
+    background: #F5F5FB 0% 0% no-repeat padding-box;
+    border: 1px solid #606060;
+    opacity: 0.11;
+    @media (max-width 768px) {
+      width: 93%;
+      bottom: 13%;
+    }   
+    @media (max-width 576px) {
+      width: 91%;
+    }
+    @media screen and (max-height: 768px) and (min-width: 1024px){
+      bottom: 2.6rem;
+    }
+  }
+}

@@ -8,7 +8,7 @@ Thumbs.db
 .Trashes
 
 # Always-ignore extensions
-node-modules/
+node_modules/
 *~
 *.o
 *.class
